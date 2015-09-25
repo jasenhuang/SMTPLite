@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.libraries    = "z"
   s.requires_arc = true
   s.vendored_libraries = 'smtp/curl/libcurl.a'
-  s.xcconfig = { "USER_HEADER_SEARCH_PATHS" => "$(SRCROOT)/smtp/curl/curl" }
+  #s.xcconfig = { "USER_HEADER_SEARCH_PATHS" => "$(SRCROOT)/smtp/curl/curl" }
 
 end

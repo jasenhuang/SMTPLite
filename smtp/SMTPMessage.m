@@ -7,7 +7,6 @@
 //
 
 #import "SMTPMessage.h"
-#import "Base64Transcoder.h"
 #include "curl.h"
 
 size_t write_callback(void* ptr, size_t size, size_t nmemb, void* context)
@@ -267,19 +266,6 @@ size_t progress_callback( void *context , double dltotal , double dlnow , double
 }
 -(NSString *)base64Encode:(NSData*)data
 {
-    NSString *encodedString = nil;
-    
-    // Make sure this is nul-terminated.
-    size_t outBufferEstLength = EstimateBas64EncodedDataSize([data length]) + 1;
-    char *outBuffer = calloc(outBufferEstLength, sizeof(char));
-    
-    size_t outBufferLength = outBufferEstLength;
-    if (Base64EncodeData([data bytes], [data length], outBuffer, &outBufferLength, FALSE)){
-        encodedString = [NSString stringWithCString:outBuffer encoding:NSASCIIStringEncoding];
-    }else{
-        [NSException raise:@"NSData+Base64AdditionsException" format:@"Unable to encode data!"];
-    }
-    free(outBuffer);
-    return encodedString;
+    return [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
 }
 @end

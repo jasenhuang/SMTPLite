@@ -22,8 +22,6 @@
 		55DC80C91BB0305000163CF4 /* multi.h in Headers */ = {isa = PBXBuildFile; fileRef = 55DC80C01BB0305000163CF4 /* multi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55DC80CA1BB0305000163CF4 /* stdcheaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 55DC80C11BB0305000163CF4 /* stdcheaders.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55DC80CB1BB0305000163CF4 /* typecheck-gcc.h in Headers */ = {isa = PBXBuildFile; fileRef = 55DC80C21BB0305000163CF4 /* typecheck-gcc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55ED6F461BA96464001B612A /* Base64Transcoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 55ED6F441BA96464001B612A /* Base64Transcoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55ED6F471BA96464001B612A /* Base64Transcoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 55ED6F451BA96464001B612A /* Base64Transcoder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +54,6 @@
 		55DC80C01BB0305000163CF4 /* multi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = multi.h; path = smtp/curl/curl/multi.h; sourceTree = "<group>"; };
 		55DC80C11BB0305000163CF4 /* stdcheaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdcheaders.h; path = smtp/curl/curl/stdcheaders.h; sourceTree = "<group>"; };
 		55DC80C21BB0305000163CF4 /* typecheck-gcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "typecheck-gcc.h"; path = "smtp/curl/curl/typecheck-gcc.h"; sourceTree = "<group>"; };
-		55ED6F441BA96464001B612A /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
-		55ED6F451BA96464001B612A /* Base64Transcoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64Transcoder.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +101,6 @@
 			children = (
 				5575F07F1BA83EC200E24601 /* SMTPMessage.h */,
 				5575F0801BA83EC200E24601 /* SMTPMessage.m */,
-				55ED6F441BA96464001B612A /* Base64Transcoder.h */,
-				55ED6F451BA96464001B612A /* Base64Transcoder.m */,
 				5575F0641BA83D6400E24601 /* Supporting Files */,
 			);
 			path = smtp;
@@ -184,7 +178,6 @@
 				55DC80C71BB0305000163CF4 /* easy.h in Headers */,
 				5575F0811BA83EC200E24601 /* SMTPMessage.h in Headers */,
 				55DC80C51BB0305000163CF4 /* curlrules.h in Headers */,
-				55ED6F461BA96464001B612A /* Base64Transcoder.h in Headers */,
 				55DC80C31BB0305000163CF4 /* curl.h in Headers */,
 				55DC80C41BB0305000163CF4 /* curlbuild.h in Headers */,
 				55DC80C81BB0305000163CF4 /* mprintf.h in Headers */,
@@ -290,7 +283,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5575F0821BA83EC200E24601 /* SMTPMessage.m in Sources */,
-				55ED6F471BA96464001B612A /* Base64Transcoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -391,7 +383,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,7 +403,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = smtp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,7 +428,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = smtp/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -462,7 +454,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = smtpTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +470,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = smtpTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";

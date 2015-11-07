@@ -38,6 +38,7 @@
     
     message.subject = @"from jasenhuang";
     message.content  =@"this is a html!<br/>not plain text<br/>";
+    message.contentType = @"text/html";
     SMTPAttachment* attach = [[SMTPAttachment alloc] init];
     attach.name = @"image.png";
     attach.filePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"image" ofType:@"png"];
@@ -50,6 +51,8 @@
     } failure:^(SMTPMessage * message, NSError * error) {
         NSLog(@"error = %@", error);
     }];
+    
+    sleep(30);
 }
 
 - (void)testPerformanceExample {

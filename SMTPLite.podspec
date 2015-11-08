@@ -1,15 +1,14 @@
 Pod::Spec.new do |s|
 
   s.name         = "SMTPLite"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "A smtp library for object-c"
   s.homepage     = 'https://github.com/jasenhuang/smtp'
   s.license      = { :type => 'BSD' }
   s.author       = { 'jasenhuang' => 'jasenhuang@rdgz.org' }
   s.platform     = :ios, "7.0"
   s.ios.deployment_target = "7.0"
-  s.source       = { :git => "https://github.com/jasenhuang/smtp.git", :tag =>
-  "0.0.2" }
+  s.source       = { :git => "https://github.com/jasenhuang/smtp.git", :tag => "0.0.3" }
   s.source_files  = "smtp/**/*.{h,m}"
   s.public_header_files = "smtp/**/*.h"
   s.libraries    = "z"

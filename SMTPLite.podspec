@@ -8,8 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { 'jasenhuang' => 'jasenhuang@rdgz.org' }
   s.platform     = :ios, "7.0"
   s.ios.deployment_target = "7.0"
-  s.source       = { :git => "https://github.com/jasenhuang/smtp.git", :tag =>
-  "0.0.2" }
+  s.source       = { :git => "https://github.com/jasenhuang/smtp.git", :tag => "0.0.2" }
   s.source_files  = "smtp/**/*.{h,m}"
   s.public_header_files = "smtp/**/*.h"
   s.libraries    = "z"

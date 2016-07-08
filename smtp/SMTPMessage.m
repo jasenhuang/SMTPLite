@@ -174,7 +174,7 @@ size_t progress_callback( void *context , double dltotal , double dlnow , double
     
     NSMutableString* mime = [NSMutableString string];
     
-    [mime appendFormat:@"Date: %@\r\n", @"Date: Wed, 16 Sep 2015 15:57:09 +0800"];
+    [mime appendFormat:@"Date: %@\r\n", [[NSDate date] descriptionWithLocale:[NSLocale currentLocale]]];
     
     [mime appendFormat:@"From: <%@>\r\n", _from];
     [mime appendFormat:@"To: <%@>\r\n", _to];

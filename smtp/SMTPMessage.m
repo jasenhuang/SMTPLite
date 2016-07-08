@@ -99,12 +99,12 @@ size_t progress_callback( void *context , double dltotal , double dlnow , double
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         CURLcode code = [self send];
         if (code != CURLE_OK) {
-            if (_successCallback) _successCallback(self);
-        }else{
             NSError* error = [NSError errorWithDomain:@"com.nextfun.SMTPMessage" code:code
                                              userInfo:@{@"msg":[NSString stringWithUTF8String:curl_easy_strerror(code)]}];
             NSLog(@"SMTPMessage send error:%@", error);
             if (_failureCallback) _failureCallback(self, error);
+        }else{
+            if (_successCallback) _successCallback(self);
         }
         [[NSFileManager defaultManager] removeItemAtPath:_filePath error:nil];
     });
@@ -237,6 +237,10 @@ size_t progress_callback( void *context , double dltotal , double dlnow , double
         //attach
         NSData* data = nil;
         for (SMTPAttachment* item in _attachments) {
+            
+            data = [NSData dataWithContentsOfFile:item.filePath];
+            if (!data) continue;
+            
             [mime appendFormat:@"--%@\r\n", _boundary];
             [mime appendFormat:@"Content-Type: application/octet-stream;\r\n"];
             [mime appendFormat:@"\tcharset=\"utf-8\"\r\n"];
@@ -245,7 +249,7 @@ size_t progress_callback( void *context , double dltotal , double dlnow , double
             [mime appendFormat:@"Content-Transfer-Encoding: base64\r\n"];
             
             [mime appendString:@"\r\n"];
-            data = [NSData dataWithContentsOfFile:item.filePath];
+            
             [mime appendString:[self base64Encode:data]];
             [mime appendString:@"\r\n"];
             

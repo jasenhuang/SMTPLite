@@ -3,6 +3,7 @@
 
 2.base on libcurl-7.44
 
+pod 'SMTPLite', '~> 0.0.3'
 
 ```
 	SMTPMessage *message = [[SMTPMessage alloc] init];
